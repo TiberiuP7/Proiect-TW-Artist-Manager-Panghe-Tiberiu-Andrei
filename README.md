@@ -6,16 +6,17 @@ After downloading the project locally, open a terminal in the project folder and
 
 <br>
 For the server:
-<br>
-cd server 
-npm install
-cp .env.example .env
-npm run dev.
+<br><br>
+cd server <br>
+npm install <br>
+cp .env.example .env <br>
+npm run dev. <br>
 
 <br><br>
 For the frontend:
 <br>
 In another terminal, run
-cd frontend
-npm install
-npm run dev.
+<br><br>
+cd frontend <br>
+npm install <br>
+npm run dev. <br>
