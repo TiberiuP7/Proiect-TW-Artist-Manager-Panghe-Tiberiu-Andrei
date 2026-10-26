@@ -6,7 +6,7 @@ After downloading the project locally, open a terminal in the project folder and
 
 <br>
 For the server:
-<br><br>
+<br>
 cd server <br>
 npm install <br>
 cp .env.example .env <br>
@@ -16,7 +16,7 @@ npm run dev. <br>
 For the frontend:
 <br>
 In another terminal, run
-<br><br>
+<br>
 cd frontend <br>
 npm install <br>
 npm run dev. <br>
