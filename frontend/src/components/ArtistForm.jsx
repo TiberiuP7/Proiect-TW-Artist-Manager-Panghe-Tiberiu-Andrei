@@ -40,7 +40,7 @@ export default function ArtistForm({ currentArtist, clearCurrent, onRefresh }) {
 
     return (
         <div className="form-container">
-            <h3>{currentArtist ? 'Editează Artist Favorit' : 'Adaugă Artist Nou'}</h3>
+            <h3>{currentArtist ? 'Editeaza Artist Favorit' : 'Adauga Artist Nou'}</h3>
             <form onSubmit={handleSubmit}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '15px' }}>
                     <div className="form-group">
@@ -67,11 +67,11 @@ export default function ArtistForm({ currentArtist, clearCurrent, onRefresh }) {
                     <div className="form-group">
                         <label>Status *</label>
                         <select value={formData.status} onChange={e => setFormData({...formData, status: e.target.value})}>
-                            <option value="urmarit ocazional">Urmărit ocazional</option>
+                            <option value="urmarit ocazional">Urmarit ocazional</option>
                             <option value="top favorite">Top favorite</option>
                             <option value="inspirational">Inspirational</option>
                             <option value="new entry">New entry</option>
-                            <option value="de sustinut financiar">De susținut financiar</option>
+                            <option value="de sustinut financiar">De sustinut financiar</option>
                         </select>
                     </div>
                 </div>
@@ -79,8 +79,8 @@ export default function ArtistForm({ currentArtist, clearCurrent, onRefresh }) {
                     <label>Note Personale</label>
                     <textarea rows="2" value={formData.notePersonale} onChange={e => setFormData({...formData, notePersonale: e.target.value})}></textarea>
                 </div>
-                <button type="submit">Salvează</button>
-                {currentArtist && <button type="button" onClick={clearCurrent} style={{ backgroundColor: '#555', marginLeft: '10px' }}>Anulează</button>}
+                <button type="submit">Salveaza</button>
+                {currentArtist && <button type="button" onClick={clearCurrent} style={{ backgroundColor: '#555', marginLeft: '10px' }}>Anuleaza</button>}
             </form>
         </div>
     );

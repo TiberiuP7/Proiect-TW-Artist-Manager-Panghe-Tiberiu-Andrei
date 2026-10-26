@@ -8,7 +8,6 @@ export default function UserProfile() {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
 
-    // Încărcăm datele utilizatorului curent folosind ruta GET /users/:id
     useEffect(() => {
         const fetchUserData = async () => {
             if (!user?.id) return;
@@ -19,13 +18,12 @@ export default function UserProfile() {
                     setEmail(res.data.data.email);
                 }
             } catch (err) {
-                console.error('Eroare la încărcarea datelor de profil');
+                console.error('Eroare la incarcarea datelor de profil');
             }
         };
         fetchUserData();
     }, [user, API_URL]);
 
-    // Actualizare profil folosind ruta PUT /users/:id
     const handleUpdate = async (e) => {
         e.preventDefault();
         setMessage('');
@@ -39,19 +37,18 @@ export default function UserProfile() {
         }
     };
 
-    // Ștergere cont folosind ruta DELETE /users/:id
     const handleDeleteAccount = async () => {
-        const confirmare = confirm('Sigur vrei să îți ștergi definitiv contul? Această acțiune este ireversibilă!');
+        const confirmare = confirm('Sigur vrei sa iti stergi definitiv contul? Aceasta actiune este ireversibila!');
         if (!confirmare) return;
 
         try {
             const res = await axios.delete(`${API_URL}/users/${user.id}`);
             if (res.data.success) {
-                alert('Contul tău a fost șters.');
-                logout(); // Îl deconectăm forțat pentru că sesiunea nu mai este validă
+                alert('Contul tau a fost sters.');
+                logout();
             }
         } catch (err) {
-            alert('Eroare la ștergerea contului.');
+            alert('Eroare la stergerea contului.');
         }
     };
 
@@ -71,12 +68,12 @@ export default function UserProfile() {
                     <input type="text" value={name} onChange={(e) => setName(e.target.value)} required />
                 </div>
 
-                <button type="submit" style={{ backgroundColor: '#2e7d32' }}>Actualizează Numele</button>
+                <button type="submit" style={{ backgroundColor: '#2e7d32' }}>Actualizeaza Numele</button>
                 
                 <div style={{ marginTop: '20px', borderTop: '1px solid #3c3c3c', paddingTop: '15px' }}>
                     <p style={{ fontSize: '13px', color: '#aaa', margin: '0 0 10px 0' }}>Zona de securitate:</p>
                     <button type="button" className="btn-danger" onClick={handleDeleteAccount} style={{ padding: '6px 12px', fontSize: '13px' }}>
-                        Șterge Contul Definitiv
+                        Sterge Contul Definitiv
                     </button>
                 </div>
             </form>

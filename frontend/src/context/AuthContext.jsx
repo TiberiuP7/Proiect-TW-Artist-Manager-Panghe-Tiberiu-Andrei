@@ -15,13 +15,12 @@ export const AuthProvider = ({ children }) => {
         const verifyUserToken = async () => {
             if (token) {
                 try {
-                    // Endpointul tău din auth.routes.js
                     const res = await axios.post(`${API_URL}/auth/check`, {}, {
                         headers: { Authorization: `Bearer ${token}` }
                     });
                     if (res.data.success) {
                         setIsAuthenticated(true);
-                        setUser(res.data.data); // Datele decodate din token (id, role)
+                        setUser(res.data.data);
                         axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
                     } else {
                         logout();

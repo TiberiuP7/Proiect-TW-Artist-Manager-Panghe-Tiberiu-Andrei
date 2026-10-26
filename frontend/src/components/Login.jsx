@@ -17,7 +17,7 @@ export default function Login({ toggleAuthMode }) {
                 login(res.data.data.token);
             }
         } catch (err) {
-            setError(err.response?.data?.message || 'Email sau parolă greșită');
+            setError(err.response?.data?.message || 'Email sau parola gresita');
         }
     };
 
@@ -31,13 +31,13 @@ export default function Login({ toggleAuthMode }) {
                     <input type="email" value={email} onChange={e => setEmail(e.target.value)} required />
                 </div>
                 <div className="form-group">
-                    <label>Parolă</label>
+                    <label>Parola</label>
                     <input type="password" value={password} onChange={e => setPassword(e.target.value)} required />
                 </div>
-                <button type="submit">Intră în cont</button>
+                <button type="submit">Intra in cont</button>
             </form>
             <p style={{ marginTop: '15px', fontSize: '14px' }}>
-                Nu ai cont? <span className="auth-toggle" onClick={toggleAuthMode}>Înregistrează-te</span>
+                Nu ai cont? <span className="auth-toggle" onClick={toggleAuthMode}>Inregistreaza-te</span>
             </p>
         </div>
     );

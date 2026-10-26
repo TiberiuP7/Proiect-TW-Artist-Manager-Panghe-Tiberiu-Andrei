@@ -13,7 +13,7 @@ export default function Register({ toggleAuthMode }) {
         try {
             const res = await axios.post(`${API_URL}/users`, formData);
             if (res.data.success) {
-                setMsg({ text: 'Cont creat cu succes! Te poți loga acum.', isError: false });
+                setMsg({ text: 'Cont creat cu succes! Te poti loga acum.', isError: false });
                 setFormData({ name: '', email: '', password: '' });
             }
         } catch (err) {
@@ -23,7 +23,7 @@ export default function Register({ toggleAuthMode }) {
 
     return (
         <div className="auth-box">
-            <h2>Înregistrare cont</h2>
+            <h2>Inregistrare cont</h2>
             {msg.text && <p style={{ color: msg.isError ? '#f44336' : '#4caf50' }}>{msg.text}</p>}
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
@@ -35,13 +35,13 @@ export default function Register({ toggleAuthMode }) {
                     <input type="email" value={formData.email} onChange={e => setFormData({...formData, email: e.target.value})} required />
                 </div>
                 <div className="form-group">
-                    <label>Parolă</label>
+                    <label>Parola</label>
                     <input type="password" value={formData.password} onChange={e => setFormData({...formData, password: e.target.value})} required />
                 </div>
-                <button type="submit" style={{ backgroundColor: '#2e7d32' }}>Creează Cont</button>
+                <button type="submit" style={{ backgroundColor: '#2e7d32' }}>Creeaza Cont</button>
             </form>
             <p style={{ marginTop: '15px', fontSize: '14px' }}>
-                Ai deja cont? <span className="auth-toggle" onClick={toggleAuthMode}>Autentifică-te</span>
+                Ai deja cont? <span className="auth-toggle" onClick={toggleAuthMode}>Autentifica-te</span>
             </p>
         </div>
     );

@@ -30,11 +30,6 @@ const verifyToken = (req, res, next) => {
 const isValidToken = (token) => {
     try {
         jwt.verify(token, process.env.TOKEN_SECRET, (err) => {
-        //     if(err) {
-        //         return false;
-        //     }
-        //     return true;
-       
             return err ? false : true;
         });
     } catch (error) {

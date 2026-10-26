@@ -1,7 +1,6 @@
 const ArtistFavorit = require("./ArtistFavorit");
 const User = require("./User");
 
-// Define relationships here after both models are loaded
 User.hasMany(ArtistFavorit, {
     foreignKey: 'userId'
 });

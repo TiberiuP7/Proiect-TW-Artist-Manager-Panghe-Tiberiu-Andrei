@@ -100,13 +100,6 @@ router.put('/:id', verifyToken, async (req, res) => {
             ...req.body
         });
 
-        // favorite.artistName = artistName || favorite.artistName;
-        // favorite.stil = req.body.stil || favorite.stil;
-        // favorite.status = req.body.status || favorite.status;
-        // favorite.notePersonale = req.body.notePersonale || favorite.notePersonale;
-
-         // await favorite.save();
-
         res.status(200).json({ success: true, message: 'Favorite artist updated successfully', data: favorite });
 
     } catch (error) {

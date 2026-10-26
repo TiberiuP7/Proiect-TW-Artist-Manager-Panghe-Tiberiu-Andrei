@@ -41,7 +41,7 @@ function Dashboard() {
                     <UserProfile />
                 </div>
                 <div className="right-side">
-                    <h3>Artiștii tăi favoriți</h3>
+                    <h3>Artistii tai favoriti</h3>
                     <ArtistList artists={artists} onEdit={setCurrentArtist} onRefresh={fetchArtists} />
 
                 </div>
