@@ -39,7 +39,7 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/check', verifyToken, async (req, res) => {
-    res.status(200).json({success: true, message: 'The token is valid', data: {}}); 
+    res.status(200).json({success: true, message: 'The token is valid', data: req.user});
 });
 
 module.exports = router;

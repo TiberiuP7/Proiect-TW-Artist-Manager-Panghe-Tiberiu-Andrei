@@ -4,7 +4,7 @@ import { AuthContext } from '../context/AuthContext';
 
 export default function Login({ toggleAuthMode }) {
     const { login, API_URL } = useContext(AuthContext);
-    const [email, setEmail] = useState('panghetiberiu23@stud.ase.ro');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
